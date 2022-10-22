@@ -11,7 +11,7 @@ public class Album {
 
     private ArrayList<Song> songs;
 
-    public Album(String name, String artist, ArrayList<Song> songs) {
+    public Album(String name, String artist) {
         this.name = name;
         this.artist = artist;
         this.songs = new ArrayList<Song>();
@@ -23,8 +23,9 @@ public class Album {
         for (Song check: songs){
             if(check.getTitle().equals(title)){
             }
-            return null;
+
         }
+        return null;
     }
 
     public boolean addSong(String title, double duration){
@@ -49,5 +50,17 @@ public class Album {
         return false;
     }
 
+        public boolean addToPlayList(String title,LinkedList<Song> PlayList ){
+            for (Song checkedSong : this.songs){
+                if(checkedSong.getTitle().equals(title)) {
+                PlayList.add(checkedSong);
+                return true;
+                }
+                }
+            System.out.println(title+ " there is no such song ");
+            return false;
+            }
+        }
 
-}
+
+
